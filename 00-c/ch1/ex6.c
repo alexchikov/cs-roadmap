@@ -8,7 +8,7 @@ int main(){
         if (c == '\n'){
             continue;
         } else {
-            counter += (int) (sizeof(c) / sizeof(char));
+            counter += 1;
         }
     }
 
