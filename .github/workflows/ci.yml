@@ -1,0 +1,27 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - master
+            - main
+
+jobs:
+    test-c:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v5
+
+            - name: build
+              run: |
+                cd 00-c/projects/linked-list
+                gcc test.c list.c -o test
+            
+            - name: test
+              run: ./test
+
+            - name: clean
+              if: always()
+              run: rm -f test
+              
