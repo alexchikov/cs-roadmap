@@ -25,5 +25,5 @@ jobs:
 
             - name: clean
               if: always()
-              run: rm -f test
+              run: rm -f 00-c/projects/linked-list/test
               
