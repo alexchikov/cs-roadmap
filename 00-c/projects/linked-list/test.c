@@ -68,5 +68,22 @@ int main(){
         printf("Tests on free_list completed successfully!\n");
     }
 
+    // тесты на find
+    {
+        Node* some_list = init_list();
+
+        assert(find(some_list, 9) == -1);
+
+        append(&some_list, 1);
+        assert(find(some_list, 1) == 0);
+
+        append(&some_list, 2);
+        append(&some_list, 3);
+
+        assert(find(some_list, 2) == 1);
+        assert(find(some_list, 3) == 2);
+        printf("Tests on find completed successfully!\n");
+    }
+
     return 0;
 }
