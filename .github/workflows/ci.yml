@@ -19,7 +19,9 @@ jobs:
                 gcc test.c list.c -o test
             
             - name: test
-              run: ./test
+              run: |
+                cd 00-c/projects/linked-list
+                ./test
 
             - name: clean
               if: always()
